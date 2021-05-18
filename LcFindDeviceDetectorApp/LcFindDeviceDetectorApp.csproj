@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Version>1.0.0</Version>
+    <Authors>Light Conversion, UAB</Authors>
+    <Product>LC-FIND Device Detector</Product>
+    <Description>An app to test LC-FIND client-side functionality. And maybe configure something.</Description>
+    <Copyright>Copyright © 2021 Light Conversion, UAB</Copyright>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <AssemblyName>DeviceDetector</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro" Version="2.4.4" />
+    <PackageReference Include="SimpleMvvmToolkit" Version="5.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Code\EditorView.xaml.cs">
+      <DependentUpon>EditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Code\MainWindow.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Code\QuestionSymbol.xaml.cs">
+      <DependentUpon>QuestionSymbol.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Code\EditorView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Code\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Code\QuestionSymbol.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LightConversion.Protocols.LcFind\LightConversion.Protocols.LcFind.csproj" />
+  </ItemGroup>
+
+</Project>
